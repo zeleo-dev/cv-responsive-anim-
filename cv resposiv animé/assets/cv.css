@@ -1,0 +1,174 @@
+/*general*/
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+
+  font-size: 16px !important;
+}
+
+body {
+
+  overflow-x: hidden;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+nav {
+  height: 100%;
+}
+
+
+
+/*bouton*/
+.toggle {
+  color: yellowgreen;
+  font-size: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  z-index: 20;
+  cursor: pointer;
+}
+
+/*pour rassembler les 2 btn en un et on voit apparaitre un bouton different selon si c'est fermé ou ouvert*/
+.ouvrir {
+  display: block;
+  color: darkslategrey
+}
+
+.fermer {
+  display: none;
+}
+
+.open .ouvrir {
+  display: none;
+}
+
+.open .fermer {
+  display: block;
+}
+
+/*menu*/
+
+.menu {
+  height: 100%;
+  display: flex;
+  overflow: hidden
+}
+
+.menu_left,
+.menu_right {
+  background-color: rgb(40, 39, 41);
+  width: 50%;
+  height: 100%;
+  transition: transform 0.5s;
+  /* animation pour faire glisser les menus*/
+}
+
+.menu_left {
+  transform: translateX(-100%);
+  /*pour déplacer le menu de gauche sur la gauche*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu_right {
+  transform: translateX(100%);
+  /*pour déplacer le menu de droite sur la droite */
+}
+
+.open .menu_left,
+.open .menu_right {
+  transform: translate(0);
+  /*quand le menu est ouvert alors le menu de gauche et celui de droite reviennent à leur position de base*/
+}
+
+/*inner menu_left*/
+.menu_left_inner_item {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 15rem;
+}
+
+.menu_left_inner_item a {
+  color: rgb(181, 228, 13);
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.menu_left_inner_item_small {
+  font-size: 1rem;
+}
+
+.menu_left_inner_item p {
+  font-size: 1rem;
+  color: aliceblue;
+}
+
+/*inner menu right*/
+.menu_right_inner_item {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+.menu_right_inner_item_title {
+  font-size: 1rem;
+  color: rgb(181, 228, 13);
+}
+
+.menu_right_inner_item_title li a {
+  color: rgb(181, 228, 13);
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none !important;
+}
+
+.sep {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  background: var(--secondary-color);
+
+}
+
+.sep__icon {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--third-color);
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  opacity: 0;
+}
+
+
+/*hero*/
+.hero {
+  background: url(img/webstacks.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
